@@ -93,3 +93,7 @@ Tracking performance is evaluated using RMSE metrics
 ## Evaluation
 
 The tracking movie is saved under the directory /result/movies.
+
+<p>
+    <img src="img/video.gif"/>
+</p>
