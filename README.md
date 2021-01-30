@@ -97,3 +97,27 @@ The tracking movie is saved under the directory /result/movies.
 <p>
     <img src="img/video.gif"/>
 </p>
+
+## Reflection
+
+### Most Difficult Part
+
+In my opinion, I faced the most difficulty while implementing the camera measurement model, projecting 3D points to 2D points. Waymo's camera coordinate frame deviates from the z-froward, x-right, and y down coordinate frame, so it is difficult to implement cameara axis transformation.
+
+### Benifits of Camera-lidar Fusion Tracking over Lidar-only Tracking
+
+Theoritically, camera-fusion tracking is said to improve the robustness and accuracy of the system.
+
+However, in this project, the camera measurement model was not perfect. It tries projecting the centroid of 3d bounding box in space to the center of bounding box in image, in reality this assumption does not hold true. Thus, in this case, the camera-fusion tracking doesn't add much improvement to the system over lidar-only tracking.
+
+### Real-life Challenges
+
+A sensor-fusion system can face a number of challenges in real-life. This challenges also exist in this project.
+
+* accurate association between mutiple tracks and multiple measures - It is difficult to set a good gating threshold for all scenarios.
+* measurement noise configuration - Each measurement should come with its own noice variance rather than a fixed noise variance for the sensor.
+* choice of process model - It is important to find a good balance between accuracy and computations.
+
+### Improvement Opportunity
+
+Since the current camera measurements model is very rough, adding camera-fusion tracking wont be beneficial to the system. Alternatively, we can match the actual 3d points in lidar point cloud to vehicle object pixels in image. A theorectially sound camera measurement model should help with the fusion result.
