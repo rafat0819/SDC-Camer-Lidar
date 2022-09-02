@@ -1,6 +1,4 @@
-# Self Driving Car Beta Testing Nanodegree
-# Midterm - 3D Object Detection
-
+# Self Driving Car: Camera-lidar Fusion Tracking
 
 In this project, we used real-world data from the Waymo Open Dataset and apply an extended Kalman filter for sensor fusion and tracking multiple vehicles.
 The major tasks accomplished to complete the project:
